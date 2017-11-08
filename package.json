@@ -10,6 +10,7 @@
     "build": "gulp --gulpfile build/gulpfile.js --cwd . default --production",
     "dev": "gulp --gulpfile build/gulpfile.js --cwd . watch",
     "test": "gulp --gulpfile build/gulpfile.js --cwd . test",
+    "lint": "gulp --gulpfile build/gulpfile.js --cwd . lint",
     "clean": "gulp --gulpfile build/gulpfile.js --cwd . clean"
   },
   "repository": {
@@ -37,8 +38,10 @@
     "es6-shim": "^0.35.3",
     "gulp": "^3.9.1",
     "gulp-changed": "^3.1.1",
+    "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
+    "gulp-tslint": "^8.1.2",
     "gulp-typescript": "^3.2.3",
     "gulp-uglify": "^3.0.0",
     "jasmine-core": "^2.8.0",
@@ -54,6 +57,8 @@
     "merge2": "^1.2.0",
     "rxjs": "^5.5.2",
     "systemjs-hot-reloader": "^1.1.0",
+    "tslint": "^5.8.0",
+    "tslint-microsoft-contrib": "^5.0.1",
     "typescript": "^2.6.1",
     "zone.js": "^0.8.18"
   },

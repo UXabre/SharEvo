@@ -5,6 +5,7 @@ let merge = require("merge-stream");
 let code = require("./tasks/typescript");
 let style = require("./tasks/sass");
 let static = require("./tasks/static");
+let linting = require("./tasks/linting");
 let testing = require("./tasks/karma");
 let watch = require("./tasks/watch");
 
@@ -18,6 +19,10 @@ gulp.task("default", () => {
 
 gulp.task("test",  (done) => {
     testing.runTests(true, done);
+});
+
+gulp.task("lint",  (done) => {
+    return linting.lint();
 });
 
 gulp.task("watch", ["default"], () => {

@@ -12,5 +12,9 @@ module.exports = {
 
     reportFolder: "reports",
 
+    lintOutput: "json",
+    allowLintWarnings: true,
+    
+    lintRules: __dirname + "/tslint.config.json",
     karmaConfigFile: __dirname + "/karma.config.js"
 }
