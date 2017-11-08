@@ -8,11 +8,11 @@ let config = require("../build.config");
 
 module.exports = {
     compileStyle: () => {
-        return gulp.src(`${config.sourceFolder}/${config.assetsFolder}/**/*.scss`, {base: config.sourceFolder})
-            .pipe(changed(`${config.destinationFolder}/`), {extension: '.css'})
+        return gulp.src(`${config.sourceFolder}/${config.clientFolder}/${config.assetsFolder}/**/*.scss`, {base: `${config.sourceFolder}/${config.clientFolder}`})
+            .pipe(changed(`${config.destinationFolder}/${config.clientFolder}/`), {extension: '.css'})
             .pipe(sourcemaps.init())
             .pipe(sass())
             .pipe(sourcemaps.write("."))
-            .pipe(gulp.dest(`${config.destinationFolder}/`));
+            .pipe(gulp.dest(`${config.destinationFolder}/${config.clientFolder}/`));
     }
 }

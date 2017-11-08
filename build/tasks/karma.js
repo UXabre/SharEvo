@@ -20,7 +20,7 @@ function handleKarmaError(error, callback) {
 
 module.exports = {
     runTests: (singleRun, done) => {
-        code.compileTests().on('end', () => {
+        code.compileTests().on("queueDrain", () => {
             new karma({
                 configFile: config.karmaConfigFile,
                 singleRun: singleRun

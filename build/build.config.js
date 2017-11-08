@@ -2,8 +2,11 @@ module.exports = {
     sourceFolder: "src",
     destinationFolder: "dist",
 
-    applicationFolder: "app",
+    clientFolder: "client",
+    serverFolder: "backend",
+
     assetsFolder: "assets",
+    
     testsFolder: "tests",
     testsSuffix: ".spec",
 

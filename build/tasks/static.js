@@ -15,14 +15,14 @@ module.exports = {
     copy: () => {
         return merge(
             gulp.src(["node_modules/es6-shim/es6-shim.min.js", "node_modules/zone.js/dist/zone.js", "node_modules/reflect-metadata/Reflect.js", "jspm_packages/**/*"], {base: "."})
-                .pipe(changed(`${config.destinationFolder}/`))
-                .pipe(gulp.dest(`${config.destinationFolder}/`)),
-            gulp.src([`${config.sourceFolder}/**/*.htm*`, `${config.sourceFolder}/**/*.css`, `${config.sourceFolder}/${config.assetsFolder}/**/*`], {base: config.sourceFolder})
-                .pipe(changed(`${config.destinationFolder}/`))
-                .pipe(gulp.dest(`${config.destinationFolder}/`)),
+                .pipe(changed(`${config.destinationFolder}/${config.clientFolder}`))
+                .pipe(gulp.dest(`${config.destinationFolder}/${config.clientFolder}`)),
+            gulp.src([`${config.sourceFolder}/${config.clientFolder}/**/*.htm*`, `${config.sourceFolder}/${config.clientFolder}/**/*.css`, `${config.sourceFolder}/${config.clientFolder}/${config.assetsFolder}/**/*`], {base: `${config.sourceFolder}/${config.clientFolder}`})
+                .pipe(changed(`${config.destinationFolder}/${config.clientFolder}`))
+                .pipe(gulp.dest(`${config.destinationFolder}/${config.clientFolder}`)),
             gulp.src("build/jspm.config.js*", {base: "build"})
-                .pipe(changed(`${config.destinationFolder}/`))
-                .pipe(gulp.dest(`${config.destinationFolder}/`))
+                .pipe(changed(`${config.destinationFolder}/${config.clientFolder}`))
+                .pipe(gulp.dest(`${config.destinationFolder}/${config.clientFolder}`))
         );
     }
 }

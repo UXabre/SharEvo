@@ -19,20 +19,20 @@ module.exports = {
         testing.runTests(false);
 
         browserSync.watch([
-            `${config.destinationFolder}/index.htm`,
-            `${config.destinationFolder}/jspm.config.js`,
+            `${config.destinationFolder}/${config.clientFolder}/index.htm`,
+            `${config.destinationFolder}/${config.clientFolder}/jspm.config.js`,
         ]).on('change', browserSync.reload);
 
         require('chokidar-socket-emitter')({
             port: 8081, 
-            path: config.destinationFolder, 
-            relativeTo: config.destinationFolder
+            path: `${config.destinationFolder}/${config.clientFolder}`, 
+            relativeTo: `${config.destinationFolder}/${config.clientFolder}`
         });
 
         browserSync.init({
             port: 8080,
             server: {
-                baseDir: config.destinationFolder,
+                baseDir: `${config.destinationFolder}/${config.clientFolder}`,
                 middleware: [
                     rewrite([
                         '!\\.\\w+$ /index.htm [L]'
