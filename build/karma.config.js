@@ -10,7 +10,7 @@ let proxies = {};
 
 module.exports = function(karmaConfig) {
   karmaConfig.set({
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadless'],
     frameworks: ['jspm', 'jasmine'],
     reporters: ["spec", "coverage", "remap-coverage", "junit"],
     basePath: "..",
