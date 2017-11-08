@@ -15,6 +15,7 @@ module.exports = {
     lintOutput: "json",
     allowLintWarnings: true,
     
+    baseTsConfigFile: __dirname + "/ts.config.json",
     lintRules: __dirname + "/tslint.config.json",
     karmaConfigFile: __dirname + "/karma.config.js"
 }
