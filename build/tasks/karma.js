@@ -25,7 +25,7 @@ module.exports = {
                 configFile: config.karmaConfigFile,
                 singleRun: singleRun
             }, (error) => {
-                static.clean().on("end", () => {
+                static.clean().then(() => {
                     handleKarmaError(error, done);
                 });
             }).start();

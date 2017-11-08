@@ -1,7 +1,7 @@
 let gulp = require("gulp");
 
 let changed = require("gulp-changed");
-let clean = require('gulp-clean');
+let del = require('del');
 
 let merge = require("merge-stream");
 
@@ -9,8 +9,7 @@ let config = require("../build.config");
 
 module.exports = {
     clean: () => {
-        return gulp.src([`${config.testsFolder}/**/*.js`, `${config.testsFolder}/**/*.js.map`, `${config.sourceFolder}/**/*.js`, `${config.sourceFolder}/**/*.js.map`], {read: false})
-            .pipe(clean());
+        return del([`${config.testsFolder}/**/*.js`, `${config.testsFolder}/**/*.js.map`, `${config.sourceFolder}/**/*.js`, `${config.sourceFolder}/**/*.js.map`]);
     },
     copy: () => {
         return merge(

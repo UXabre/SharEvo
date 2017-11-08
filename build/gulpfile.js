@@ -16,7 +16,6 @@ gulp.task("default", () => {
     return merge(code.compileCode(), style.compileStyle(), static.copy());
 });
 
-
 gulp.task("test",  (done) => {
     testing.runTests(true, done);
 });
